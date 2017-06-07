@@ -10,19 +10,16 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.canor.android.R;
-import com.example.canor.android.asyncTask.ImageAsyncTask;
 import com.example.canor.android.database.DatabaseArticles;
 import com.example.canor.android.listener.CheckboxListener;
 import com.example.canor.android.model.Article;
 import com.example.canor.android.viewHolder.ArticlesViewHolder;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class ArticleFragment extends Fragment {
@@ -43,7 +40,6 @@ public class ArticleFragment extends Fragment {
         } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
-        ImageAsyncTask imageAsyncTask;
         TextView name = (TextView) rootView.findViewById(R.id.title);
         ImageView imageView = (ImageView) rootView.findViewById(R.id.imageButton);
         assert article != null;
@@ -67,8 +63,7 @@ public class ArticleFragment extends Fragment {
         else stock.setText("En stock");
         CheckBox box= (CheckBox) rootView.findViewById(R.id.wishlist);
         box.setOnClickListener(new CheckboxListener(box, article));
-        imageAsyncTask = new ImageAsyncTask(imageView);
-        imageAsyncTask.execute(article.getPic());
+        Picasso.with(getActivity()).load(article.getPic()).into(imageView);
         return rootView;
     }
 

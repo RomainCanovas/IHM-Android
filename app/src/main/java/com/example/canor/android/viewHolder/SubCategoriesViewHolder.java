@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.canor.android.R;
-import com.example.canor.android.asyncTask.ImageAsyncTask;
 import com.example.canor.android.fragment.articles.books.BDFragment;
 import com.example.canor.android.fragment.articles.books.DictionnairesFragment;
 import com.example.canor.android.fragment.articles.books.HistoireFragment;
@@ -25,6 +24,7 @@ import com.example.canor.android.fragment.articles.music.RockFragment;
 import com.example.canor.android.fragment.articles.music.VarFrFragment;
 import com.example.canor.android.fragment.articles.music.VarIntFragment;
 import com.example.canor.android.model.Category;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by Romain on 04/06/2017.
@@ -41,8 +41,7 @@ public class SubCategoriesViewHolder extends RecyclerView.ViewHolder {
 
     public void setItem(final Category category) {
         ImageButton img = (ImageButton) this.itemView.findViewById(R.id.cate);
-        ImageAsyncTask imageAsyncTask = new ImageAsyncTask(img);
-        imageAsyncTask.execute(category.getPic());
+        Picasso.with(context).load(category.getPic()).into(img);
 
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,94 +53,112 @@ public class SubCategoriesViewHolder extends RecyclerView.ViewHolder {
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new com.example.canor.android.fragment.articles.children.MusicFragment())
+                                .addToBackStack("")
                                 .commit();
                         break;
                     case "livres":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new com.example.canor.android.fragment.articles.children.BooksFragment())
+                                .addToBackStack("")
                                 .commit();
                         break;
                     case "jeux":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new GamesFragment())
+                                .addToBackStack("")
                                 .commit();
                         break;
                     case "sciences":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new SciencesFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "roman":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new RomansFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "thriller":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new ThrillersFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "bd":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new BDFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "jeunesse":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new JeunesseFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "dictionnaire":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new DictionnairesFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "histoire":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new HistoireFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "varfr":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new VarFrFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "varint":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new VarIntFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "electro":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new ElectroFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "reggae":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new ReggaeFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "jazz":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new JazzFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "classique":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new ClassicFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "film":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new FilmsFragment())
+                                .addToBackStack("")
                                 .commit();
                     case "rock":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new RockFragment())
+                                .addToBackStack("")
                                 .commit();
 
                 }

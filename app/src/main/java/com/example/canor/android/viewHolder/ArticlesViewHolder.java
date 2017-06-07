@@ -7,13 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.canor.android.MainActivity;
 import com.example.canor.android.R;
-import com.example.canor.android.asyncTask.ImageAsyncTask;
 import com.example.canor.android.fragment.ArticleFragment;
 import com.example.canor.android.model.Article;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by Romain on 04/06/2017.
@@ -43,8 +42,7 @@ public class ArticlesViewHolder extends RecyclerView.ViewHolder {//implements Vi
         }
 
         ImageView img = (ImageView) this.itemView.findViewById(R.id.pic);
-        ImageAsyncTask imageAsyncTask = new ImageAsyncTask(img);
-        imageAsyncTask.execute(article.getPic());
+        Picasso.with(context).load(article.getPic()).into(img);
         Button button = (Button) this.itemView.findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +52,8 @@ public class ArticlesViewHolder extends RecyclerView.ViewHolder {//implements Vi
                 android.app.FragmentManager manager = ((Activity) context).getFragmentManager();
                 manager.beginTransaction()
                         .replace(R.id.content_frame
-                                , new ArticleFragment())//.addToBackStack("tag")
+                                , new ArticleFragment())
+                        .addToBackStack("")
                         .commit();
             }
 
