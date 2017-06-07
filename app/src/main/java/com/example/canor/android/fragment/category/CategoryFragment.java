@@ -1,4 +1,4 @@
-package com.example.canor.android.fragment.articles.general;
+package com.example.canor.android.fragment.category;
 
 import android.app.Fragment;
 import android.os.Build;
@@ -14,6 +14,7 @@ import com.example.canor.android.R;
 import com.example.canor.android.adapter.SubCategoriesRecyclerAdapter;
 import com.example.canor.android.database.DatabaseCategories;
 import com.example.canor.android.model.Category;
+import com.example.canor.android.viewHolder.CategoriesViewHolder;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,30 +25,43 @@ import java.util.List;
  * Created by Romain on 04/06/2017.
  */
 
-public class PromosCategoriesFragment extends Fragment {
+public class CategoryFragment extends Fragment {
+    public CategoryFragment() {
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_grid, container, false);
+        String name = new CategoriesViewHolder(rootView).getName();
         DatabaseCategories databaseCategories = new DatabaseCategories(getContext());
         List<Category> categories = new ArrayList<>();
         try {
             databaseCategories.createDataBase();
             databaseCategories.openDataBase();
-            categories = databaseCategories.getPromosCategories();
+            switch (name) {
+                case "Musique":
+                    categories = databaseCategories.getAllMusicCategories();
+                    break;
+                case "Livres":
+                    categories = databaseCategories.getAllBooksCategories();
+                    break;
+                case "Enfants":
+                    categories = databaseCategories.getAllChildCategories();
+                    break;
+            }
             databaseCategories.close();
         } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
 
-        View rootView = inflater.inflate(R.layout.fragment_grid, container, false);
-        getActivity().setTitle("Promos");
+        getActivity().setTitle(name.toUpperCase());
         SubCategoriesRecyclerAdapter customAdapter = new SubCategoriesRecyclerAdapter(categories);
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);
         RecyclerView.LayoutManager layout = new GridLayoutManager(this.getContext(), 1);
         recyclerView.setLayoutManager(layout);
         recyclerView.setAdapter(customAdapter);
         return rootView;
-
     }
+
 }

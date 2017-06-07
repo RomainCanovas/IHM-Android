@@ -7,11 +7,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.canor.android.R;
-import com.example.canor.android.fragment.articles.other.DvpFragment;
-import com.example.canor.android.fragment.articles.other.EventFragment;
-import com.example.canor.android.fragment.category.BooksFragment;
-import com.example.canor.android.fragment.category.ChildrenFragment;
-import com.example.canor.android.fragment.category.MusicFragment;
+import com.example.canor.android.fragment.articles.general.OtherFragment;
+import com.example.canor.android.fragment.category.CategoryFragment;
 import com.example.canor.android.model.Category;
 import com.squareup.picasso.Picasso;
 
@@ -41,38 +38,20 @@ public class CategoriesViewHolder extends RecyclerView.ViewHolder {
                 android.app.FragmentManager manager = ((Activity) context).getFragmentManager();
                 switch (name) {
                     case "Musique":
+                    case "Livres":
+                    case "Enfants":
                         //Toast.makeText(context, (int) itemView.getRotation(), Toast.LENGTH_SHORT).show();
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
-                                        , new MusicFragment())
-                                .addToBackStack("")
-                                .commit();
-                        break;
-                    case "Livres":
-                        manager.beginTransaction()
-                                .replace(R.id.content_frame
-                                        , new BooksFragment())
-                                .addToBackStack("")
-                                .commit();
-                        break;
-                    case "Enfants":
-                        manager.beginTransaction()
-                                .replace(R.id.content_frame
-                                        , new ChildrenFragment())
+                                        , new CategoryFragment())
                                 .addToBackStack("")
                                 .commit();
                         break;
                     case "Développement":
-                        manager.beginTransaction()
-                                .replace(R.id.content_frame
-                                        , new DvpFragment())
-                                .addToBackStack("")
-                                .commit();
-                        break;
                     case "Evenements":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
-                                        , new EventFragment())
+                                        , new OtherFragment())
                                 .addToBackStack("")
                                 .commit();
                         break;

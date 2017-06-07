@@ -11,11 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.canor.android.R;
-import com.example.canor.android.adapter.ArticlesRecyclerAdapter;
 import com.example.canor.android.adapter.SubCategoriesRecyclerAdapter;
-import com.example.canor.android.database.DatabaseArticles;
 import com.example.canor.android.database.DatabaseCategories;
-import com.example.canor.android.model.Article;
 import com.example.canor.android.model.Category;
 
 import java.io.IOException;

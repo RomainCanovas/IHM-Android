@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.example.canor.android.MainActivity;
 import com.example.canor.android.R;
 import com.example.canor.android.model.Category;
 import com.example.canor.android.viewHolder.CategoriesViewHolder;

@@ -13,7 +13,6 @@ import android.view.MenuItem;
 
 import com.example.canor.android.fragment.articles.general.HomeFragment;
 import com.example.canor.android.fragment.articles.general.NewsCategoriesFragment;
-import com.example.canor.android.fragment.articles.general.NewsFragment;
 import com.example.canor.android.fragment.articles.general.NotifFragment;
 import com.example.canor.android.fragment.articles.general.PromosCategoriesFragment;
 import com.example.canor.android.fragment.articles.general.WishlistFragment;
@@ -82,36 +81,41 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         FragmentManager fragmentManager = getFragmentManager();
 
-
         if (id == R.id.nav_accueil) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             , new HomeFragment())
+                    .addToBackStack("")
                     .commit();
         } else if (id == R.id.nav_categories) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             , new CategoriesFragment())
+                    .addToBackStack("")
                     .commit();
         } else if (id == R.id.nav_news) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             , new NewsCategoriesFragment())
+                    .addToBackStack("")
                     .commit();
         } else if (id == R.id.nav_promos) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             , new PromosCategoriesFragment())
+                    .addToBackStack("")
                     .commit();
         } else if (id == R.id.nav_wishlist) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             , new WishlistFragment())
+                    .addToBackStack("")
                     .commit();
         } else if (id == R.id.nav_notif) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             , new NotifFragment())
+                    .addToBackStack("")
                     .commit();
         } else if (id == R.id.nav_settings) {
             Intent i = new Intent(MainActivity.this, SettingsActivity.class);

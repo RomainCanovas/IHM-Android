@@ -12,14 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.canor.android.R;
 import com.example.canor.android.adapter.ArticlesRecyclerAdapter;
-import com.example.canor.android.adapter.CategoriesRecyclerAdapter;
 import com.example.canor.android.database.DatabaseArticles;
-import com.example.canor.android.database.DatabaseMusic;
-import com.example.canor.android.fragment.articles.other.DvpFragment;
-import com.example.canor.android.fragment.articles.other.EventFragment;
-import com.example.canor.android.fragment.category.BooksFragment;
-import com.example.canor.android.fragment.category.ChildrenFragment;
-import com.example.canor.android.fragment.category.MusicFragment;
 import com.example.canor.android.model.Article;
 import com.example.canor.android.viewHolder.CategoriesViewHolder;
 
