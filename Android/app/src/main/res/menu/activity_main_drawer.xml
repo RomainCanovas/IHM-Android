@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_accueil"
+            android:icon="@drawable/ic_menu_home"
+            android:title="@string/accueil" />
+        <item
+            android:id="@+id/nav_categories"
+            android:icon="@drawable/ic_menu_menu"
+            android:title="@string/categories" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_menu_news"
+            android:title="@string/news" />
+        <item
+            android:id="@+id/nav_promos"
+            android:icon="@drawable/ic_menu_promos"
+            android:title="@string/promos" />
+        <item
+            android:id="@+id/nav_wishlist"
+            android:icon="@drawable/ic_menu_wishlist"
+            android:title="@string/wishlist" />
+        <item
+            android:id="@+id/nav_notif"
+            android:icon="@drawable/ic_menu_notifications"
+            android:title="@string/notif" />
+    </group>
+
+    <item android:title="Réglages">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Préférences" />
+        </menu>
+    </item>
+
+</menu>
