@@ -78,6 +78,33 @@
             android:layout_alignBottom="@+id/price"
             android:layout_alignStart="@+id/desc" />
 
+        <TextView
+            android:id="@+id/price2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PromoPrice"
+            android:textColor="#000000"
+            android:layout_alignBaseline="@+id/space"
+            android:layout_alignBottom="@+id/space"
+            android:layout_toEndOf="@+id/space" />
+
+        <TextView
+            android:id="@+id/promo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/price"
+            android:textColor="#D40D12"
+            android:layout_alignStart="@+id/price"
+            android:text="@string/promo" />
+
+        <TextView
+            android:id="@+id/space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   "
+            android:layout_below="@+id/promo"
+            android:layout_toEndOf="@+id/price" />
+
     </RelativeLayout>
 
     <Button

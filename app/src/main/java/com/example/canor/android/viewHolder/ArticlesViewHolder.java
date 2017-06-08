@@ -35,10 +35,26 @@ public class ArticlesViewHolder extends RecyclerView.ViewHolder {//implements Vi
     public void setItem(final Article article) {
         ((TextView) this.itemView.findViewById(R.id.title)).setText(article.getTitle());
         ((TextView) this.itemView.findViewById(R.id.author)).setText(article.getAuthor());
-        ((TextView) this.itemView.findViewById(R.id.price)).setText(article.getPrice());
         if (MainActivity.orientation == 2) {
             ((TextView) this.itemView.findViewById(R.id.stock)).setText("En stock");
             ((TextView) this.itemView.findViewById(R.id.desc)).setText(article.getDescription());
+        }
+        if (article.getPromo().equals("1")){
+            this.itemView.findViewById(R.id.promo).setVisibility(View.VISIBLE);
+            this.itemView.findViewById(R.id.price2).setVisibility(View.VISIBLE);
+            TextView newPrice = ((TextView) this.itemView.findViewById(R.id.price));
+            TextView oldPrice = ((TextView) this.itemView.findViewById(R.id.price2));
+            newPrice.setText(article.getPricePromo());
+            newPrice.setTextColor(context.getResources().getColor(R.color.colorPromo));
+            oldPrice.setText(article.getPrice());
+            oldPrice.getPaint().setStrikeThruText(true);
+        }
+        else {
+            this.itemView.findViewById(R.id.promo).setVisibility(View.INVISIBLE);
+            this.itemView.findViewById(R.id.price2).setVisibility(View.INVISIBLE);
+            TextView price = (TextView) this.itemView.findViewById(R.id.price);
+            price.setText(article.getPrice());
+            price.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
         }
 
         ImageView img = (ImageView) this.itemView.findViewById(R.id.pic);

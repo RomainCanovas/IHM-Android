@@ -87,4 +87,15 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_article">ArticleActivity</string>
+    <string name="outOfstock">Cet article est épuisé</string>
+    <string name="inStock">En stock</string>
+    <string name="title">title</string>
+    <string name="author">author</string>
+    <string name="desc">desc</string>
+    <string name="price">price</string>
+    <string name="stock">stock</string>
+    <string name="addWishlist">Ajouter à ma liste d\'envies</string>
+    <string name="category">category</string>
+    <string name="pricepromo">pricePromo</string>
+    <string name="promo">PROMO!</string>
 </resources>

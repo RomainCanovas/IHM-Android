@@ -51,16 +51,30 @@ public class ArticleFragment extends Fragment {
         else category.setText(article.getCategory().toUpperCase());
         TextView author = (TextView) rootView.findViewById(R.id.author);
         author.setText(article.getAuthor());
-        TextView price = (TextView) rootView.findViewById(R.id.price);
-        price.setText(article.getPrice());
+        if (article.getPromo().equals("1")){
+            rootView.findViewById(R.id.promo).setVisibility(View.VISIBLE);
+            rootView.findViewById(R.id.price2).setVisibility(View.VISIBLE);
+            TextView newPrice = ((TextView) rootView.findViewById(R.id.price));
+            TextView oldPrice = ((TextView) rootView.findViewById(R.id.price2));
+            newPrice.setText(article.getPricePromo());
+            newPrice.setTextColor(getResources().getColor(R.color.colorPromo));
+            oldPrice.setText(article.getPrice());
+            oldPrice.getPaint().setStrikeThruText(true);
+        }
+        else {
+            rootView.findViewById(R.id.promo).setVisibility(View.INVISIBLE);
+            rootView.findViewById(R.id.price2).setVisibility(View.INVISIBLE);
+            TextView price = (TextView) rootView.findViewById(R.id.price);
+            price.setText(article.getPrice());
+            price.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        }
         TextView description = (TextView) rootView.findViewById(R.id.desc);
         description.setText(article.getDescription());
-        String mStock = article.getStock();
         TextView stock = (TextView) rootView.findViewById(R.id.stock);
-        if(mStock.equals(0)){
-            stock.setText("Cet article est épuisé");
+        if(article.getStock().equals("0")){
+            stock.setText(R.string.outOfstock);
         }
-        else stock.setText("En stock");
+        else stock.setText(R.string.inStock);
         CheckBox box= (CheckBox) rootView.findViewById(R.id.wishlist);
         box.setOnClickListener(new CheckboxListener(box, article));
         Picasso.with(getActivity()).load(article.getPic()).into(imageView);
