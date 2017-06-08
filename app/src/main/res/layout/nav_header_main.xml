@@ -24,7 +24,7 @@
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:paddingTop="@dimen/nav_header_logo_text"
-        android:text="@string/nous_contacter"
+        android:text="To Be Or To Have Mobile"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrimary"
-        android:text="@string/mail"
+        android:text="L'application qui VOUS ressemble"
         android:autoLink="email"/>
 
 </LinearLayout>

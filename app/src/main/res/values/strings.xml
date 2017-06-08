@@ -98,4 +98,7 @@
     <string name="category">category</string>
     <string name="pricepromo">pricePromo</string>
     <string name="promo">PROMO!</string>
+    <string name="phone">0637528492</string>
+    <string name="title_activity_notification_laucher">NotificationLaucherActivity</string>
+    <string name="title_activity_show_product">ShowProductActivity</string>
 </resources>
