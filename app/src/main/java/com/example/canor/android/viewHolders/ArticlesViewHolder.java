@@ -2,6 +2,8 @@ package com.example.canor.android.viewHolders;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -33,8 +35,18 @@ public class ArticlesViewHolder extends RecyclerView.ViewHolder {//implements Vi
     }
 
     public void setItem(final Article article) {
-        ((TextView) this.itemView.findViewById(R.id.title)).setText(article.getTitle());
-        ((TextView) this.itemView.findViewById(R.id.author)).setText(article.getAuthor());
+        Typeface face = Typeface.createFromAsset(context.getAssets(), "fonts/Dosis-Bold.ttf");
+        Typeface face2 = Typeface.createFromAsset(context.getAssets(), "fonts/Dosis-Regular.ttf");
+
+
+        TextView title = (TextView) this.itemView.findViewById(R.id.title);
+        title.setTypeface(face);
+        title.setText(article.getTitle());
+
+        TextView author = (TextView) this.itemView.findViewById(R.id.author);
+        author.setTypeface(face2);
+        author.setText(article.getAuthor());
+
         if (MainActivity.orientation == 2) {
             ((TextView) this.itemView.findViewById(R.id.stock)).setText("En stock");
             ((TextView) this.itemView.findViewById(R.id.desc)).setText(article.getDescription());

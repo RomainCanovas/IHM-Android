@@ -9,6 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
         android:text="@string/title"
         android:textColor="#000000"
         android:layout_alignParentTop="true"
@@ -31,18 +33,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/author"
+        android:textSize="20dp"
         android:textColor="#000000"
         android:layout_below="@+id/title"
-        android:layout_alignStart="@+id/title"
-        android:layout_marginTop="31dp" />
+        android:layout_alignStart="@+id/title" />
 
     <TextView
         android:id="@+id/desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="12dp"
         android:textColor="#000000"
         android:text="@string/desc"
+        android:textSize="17dp"
         android:layout_below="@+id/author"
         android:layout_alignStart="@+id/author" />
 
@@ -52,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/price"
+        android:textSize="20dp"
         android:textColor="#000000"
         android:layout_below="@+id/desc"
         android:layout_alignStart="@+id/desc" />
@@ -61,10 +65,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/stock"
+        android:textSize="20dp"
         android:textColor="#000000"
-        android:layout_below="@+id/price"
-        android:layout_alignEnd="@+id/desc"
-        android:layout_marginTop="20dp" />
+        android:layout_alignBottom="@+id/imageButton"
+        android:layout_alignStart="@+id/price" />
 
     <CheckBox
         android:id="@+id/wishlist"
@@ -91,6 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/price"
         android:textColor="#000000"
+        android:textSize="20dp"
         android:layout_toEndOf="@+id/space"
         android:text="@string/pricepromo" />
 
@@ -108,7 +113,20 @@
         android:layout_above="@+id/price2"
         android:layout_alignStart="@+id/price"
         android:text="@string/promo"
+        android:textSize="20dp"
         android:layout_marginBottom="2dp"
         android:textColor="@color/colorPromo"/>
+
+
+    <TextView
+        android:id="@+id/news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#D40D12"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="@string/nouveaute"
+        android:layout_above="@+id/imageButton"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

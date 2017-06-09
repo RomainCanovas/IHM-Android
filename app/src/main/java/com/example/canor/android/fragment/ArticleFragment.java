@@ -1,6 +1,8 @@
 package com.example.canor.android.fragment;
 
 import android.app.Fragment;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -40,19 +42,27 @@ public class ArticleFragment extends Fragment {
         } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
-        TextView name = (TextView) rootView.findViewById(R.id.title);
+
         ImageView imageView = (ImageView) rootView.findViewById(R.id.imageButton);
         assert article != null;
+        TextView name = (TextView) rootView.findViewById(R.id.title);
+        name.setPaintFlags(name.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
+        Typeface face = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Dosis-Bold.ttf");
+        name.setTypeface(face);
         name.setText(article.getTitle());
         TextView category = (TextView) rootView.findViewById(R.id.category);
         if(article.getSubCategory()!=null){
+            category.setTypeface(face);
             category.setText(article.getCategory().toUpperCase()+"/"+article.getSubCategory().toUpperCase());
         }
         else category.setText(article.getCategory().toUpperCase());
         TextView author = (TextView) rootView.findViewById(R.id.author);
+        author.setTypeface(face);
         author.setText(article.getAuthor());
         if (article.getPromo().equals("1")){
             rootView.findViewById(R.id.promo).setVisibility(View.VISIBLE);
+            TextView promo = ((TextView) rootView.findViewById(R.id.promo));
+            promo.setTypeface(face);
             rootView.findViewById(R.id.price2).setVisibility(View.VISIBLE);
             TextView newPrice = ((TextView) rootView.findViewById(R.id.price));
             TextView oldPrice = ((TextView) rootView.findViewById(R.id.price2));
@@ -68,9 +78,20 @@ public class ArticleFragment extends Fragment {
             price.setText(article.getPrice());
             price.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+        if (article.getNews().equals("1")){
+            rootView.findViewById(R.id.news).setVisibility(View.VISIBLE);
+            TextView news = ((TextView) rootView.findViewById(R.id.news));
+            news.setTypeface(face);
+        }
+        else{
+            rootView.findViewById(R.id.news).setVisibility(View.INVISIBLE);
+        }
         TextView description = (TextView) rootView.findViewById(R.id.desc);
+        Typeface face2 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Dosis-Regular.ttf");
+        description.setTypeface(face2);
         description.setText(article.getDescription());
         TextView stock = (TextView) rootView.findViewById(R.id.stock);
+        description.setTypeface(face);
         if(article.getStock().equals("0")){
             stock.setText(R.string.outOfstock);
         }

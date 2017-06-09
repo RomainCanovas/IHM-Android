@@ -11,6 +11,7 @@
         android:textColor="#000000"
         android:layout_marginTop="54dp"
         android:text="title"
+        android:textAlignment="center"
         android:textStyle="bold"
         android:textSize="25dp"
         android:layout_alignParentTop="true"
@@ -33,10 +34,11 @@
         android:id="@+id/author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="author"
+        android:text="@string/author"
         android:textColor="#000000"
+        android:textSize="20dp"
         android:layout_alignTop="@+id/imageButton"
-        android:layout_toEndOf="@+id/wishlist" />
+        android:layout_marginLeft="220dp"/>
 
     <TextView
         android:id="@+id/desc"
@@ -44,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="desc"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:layout_below="@+id/imageButton"
         android:layout_centerHorizontal="true" />
@@ -53,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="price"
+        android:textSize="17dp"
         android:textColor="#000000"
         android:layout_below="@+id/author"
         android:layout_alignStart="@+id/author"
@@ -63,17 +67,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="stock"
+        android:textSize="17dp"
         android:textColor="#000000"
-        android:layout_marginBottom="35dp"
         android:layout_alignBottom="@+id/imageButton"
-        android:layout_alignStart="@+id/price" />
+        android:layout_alignStart="@+id/price2" />
 
     <CheckBox
         android:id="@+id/wishlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:buttonTint="@color/colorPrimary"
-        android:text="Ajouter à ma liste d'envies"
+        android:text="@string/ajouter_ma_liste_d_envies"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="51dp" />
@@ -91,6 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/price"
+        android:textSize="17dp"
         android:layout_below="@+id/price"
         android:textColor="#000000"
         android:text="pricePromo" />
@@ -99,10 +104,22 @@
         android:id="@+id/promo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="20dp"
         android:textColor="@color/colorPromo"
         android:text="PROMO!"
         android:layout_above="@+id/price2"
         android:layout_alignStart="@+id/price" />
+
+    <TextView
+        android:id="@+id/news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category"
+        android:textColor="#D40D12"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/nouveaute"/>
 
 </RelativeLayout>
