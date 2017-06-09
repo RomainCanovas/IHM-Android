@@ -72,9 +72,20 @@ o
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/price"
+            android:textStyle="bold"
             android:textColor="#D40D12"
             android:layout_alignStart="@+id/price"
             android:text="@string/promo" />
+
+        <TextView
+            android:id="@+id/news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/author"
+            android:textColor="#D40D12"
+            android:textStyle="bold"
+            android:layout_alignStart="@+id/price"
+            android:text="@string/nouveaute" />
 
         <TextView
             android:id="@+id/space"

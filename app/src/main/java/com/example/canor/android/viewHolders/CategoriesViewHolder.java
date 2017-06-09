@@ -1,4 +1,4 @@
-package com.example.canor.android.viewHolder;
+package com.example.canor.android.viewHolders;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.canor.android.R;
-import com.example.canor.android.fragment.articles.general.OtherFragment;
-import com.example.canor.android.fragment.category.CategoryFragment;
+import com.example.canor.android.fragment.categories.CategoryFragment;
+import com.example.canor.android.fragment.products.DvpFragment;
 import com.example.canor.android.model.Category;
 import com.squareup.picasso.Picasso;
 
@@ -40,7 +40,6 @@ public class CategoriesViewHolder extends RecyclerView.ViewHolder {
                     case "Musique":
                     case "Livres":
                     case "Enfants":
-                        //Toast.makeText(context, (int) itemView.getRotation(), Toast.LENGTH_SHORT).show();
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
                                         , new CategoryFragment())
@@ -48,10 +47,9 @@ public class CategoriesViewHolder extends RecyclerView.ViewHolder {
                                 .commit();
                         break;
                     case "Développement":
-                    case "Evenements":
                         manager.beginTransaction()
                                 .replace(R.id.content_frame
-                                        , new OtherFragment())
+                                        , new DvpFragment())
                                 .addToBackStack("")
                                 .commit();
                         break;

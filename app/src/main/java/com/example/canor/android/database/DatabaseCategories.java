@@ -22,7 +22,7 @@ import java.util.List;
 
 public class DatabaseCategories extends SQLiteOpenHelper {
 
-    private static String DB_NAME = "d.sqlite";
+    private static String DB_NAME = "f.sqlite";
 
     private SQLiteDatabase myDataBase;
     private final Context myContext;
@@ -108,6 +108,7 @@ public class DatabaseCategories extends SQLiteOpenHelper {
         }
         myDataBase.close();
         cursor.close();
+        categories.remove(3);
         return categories;
     }
 
@@ -179,6 +180,36 @@ public class DatabaseCategories extends SQLiteOpenHelper {
             categories.add(new Category(
                     cursor.getString(0),
                     cursor.getString(1)));
+            cursor.moveToNext();
+        }
+        myDataBase.close();
+        cursor.close();
+        return categories;
+    }
+
+    public List<Category> getDvpCategories() {
+        List<Category> categories = new ArrayList<>();
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM dvp", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            categories.add(new Category(
+                    cursor.getString(1),
+                    cursor.getString(2)));
+            cursor.moveToNext();
+        }
+        myDataBase.close();
+        cursor.close();
+        return categories;
+    }
+
+    public List<Category> getEventCategories() {
+        List<Category> categories = new ArrayList<>();
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM event", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            categories.add(new Category(
+                    cursor.getString(1),
+                    cursor.getString(2)));
             cursor.moveToNext();
         }
         myDataBase.close();

@@ -1,4 +1,4 @@
-package com.example.canor.android.fragment.articles.general;
+package com.example.canor.android.fragment.categories;
 
 import android.app.Fragment;
 import android.os.Build;
@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.canor.android.R;
-import com.example.canor.android.adapter.SubCategoriesRecyclerAdapter;
+import com.example.canor.android.adapters.recyclers.NewsRecyclerAdapter;
+import com.example.canor.android.adapters.recyclers.PromoRecyclerAdapter;
+import com.example.canor.android.adapters.recyclers.SubCategoriesRecyclerAdapter;
 import com.example.canor.android.database.DatabaseCategories;
 import com.example.canor.android.model.Category;
 
@@ -40,9 +42,9 @@ public class NewsCategoriesFragment extends Fragment {
             e.printStackTrace();
         }
 
-        View rootView = inflater.inflate(R.layout.fragment_grid, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
         getActivity().setTitle("Nouveautés");
-        SubCategoriesRecyclerAdapter customAdapter = new SubCategoriesRecyclerAdapter(categories);
+        NewsRecyclerAdapter customAdapter = new NewsRecyclerAdapter(categories);
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);
         RecyclerView.LayoutManager layout = new GridLayoutManager(this.getContext(), 1);
         recyclerView.setLayoutManager(layout);

@@ -1,4 +1,4 @@
-package com.example.canor.android.fragment.category;
+package com.example.canor.android.fragment.categories;
 
 import android.app.Fragment;
 import android.os.Build;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.canor.android.R;
-import com.example.canor.android.adapter.CategoriesRecyclerAdapter;
+import com.example.canor.android.adapters.recyclers.CategoriesRecyclerAdapter;
 import com.example.canor.android.database.DatabaseCategories;
 import com.example.canor.android.model.Category;
 
@@ -42,7 +42,7 @@ public class CategoriesFragment extends Fragment {
             e.printStackTrace();
         }
 
-        View rootView = inflater.inflate(R.layout.fragment_grid, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
         getActivity().setTitle("Catégories");
         CategoriesRecyclerAdapter customAdapter = new CategoriesRecyclerAdapter(categories);
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);

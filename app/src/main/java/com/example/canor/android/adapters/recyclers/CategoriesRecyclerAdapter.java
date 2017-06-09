@@ -1,4 +1,4 @@
-package com.example.canor.android.adapter;
+package com.example.canor.android.adapters.recyclers;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.example.canor.android.R;
 import com.example.canor.android.model.Category;
-import com.example.canor.android.viewHolder.SubCategoriesViewHolder;
+import com.example.canor.android.viewHolders.CategoriesViewHolder;
 
 import java.util.List;
 
@@ -15,22 +15,22 @@ import java.util.List;
  * Created by Romain on 04/06/2017.
  */
 
-public class SubCategoriesRecyclerAdapter extends RecyclerView.Adapter<SubCategoriesViewHolder> {
+public class CategoriesRecyclerAdapter extends RecyclerView.Adapter<CategoriesViewHolder> {
     private List<Category> categories;
 
-    public SubCategoriesRecyclerAdapter(List<Category> categories) {
+    public CategoriesRecyclerAdapter(List<Category> categories) {
         this.categories = categories;
     }
 
     @Override
-    public SubCategoriesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CategoriesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = (LayoutInflater) parent.getContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        return new SubCategoriesViewHolder(inflater.inflate(R.layout.category, null));
+        return new CategoriesViewHolder(inflater.inflate(R.layout.category, null));
     }
 
     @Override
-    public void onBindViewHolder(SubCategoriesViewHolder holder, int position) {
+    public void onBindViewHolder(CategoriesViewHolder holder, int position) {
         holder.setItem(categories.get(position));
     }
 

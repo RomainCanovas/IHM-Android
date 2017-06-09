@@ -1,4 +1,4 @@
-package com.example.canor.android.fragment.articles.general;
+package com.example.canor.android.fragment.products;
 
 import android.app.Fragment;
 import android.os.Build;
@@ -11,9 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.canor.android.R;
-import com.example.canor.android.adapter.SubCategoriesRecyclerAdapter;
-import com.example.canor.android.database.DatabaseCategories;
-import com.example.canor.android.model.Category;
+import com.example.canor.android.adapters.recyclers.ArticlesRecyclerAdapter;
+import com.example.canor.android.database.DatabaseArticles;
+import com.example.canor.android.model.Article;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -24,25 +24,27 @@ import java.util.List;
  * Created by Romain on 04/06/2017.
  */
 
-public class PromosCategoriesFragment extends Fragment {
+public class HomeFragment extends Fragment {
+    public HomeFragment() {
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        DatabaseCategories databaseCategories = new DatabaseCategories(getContext());
-        List<Category> categories = new ArrayList<>();
+        DatabaseArticles databaseArticles = new DatabaseArticles(getContext());
+        List<Article> articles = new ArrayList<>();
         try {
-            databaseCategories.createDataBase();
-            databaseCategories.openDataBase();
-            categories = databaseCategories.getPromosCategories();
-            databaseCategories.close();
+            databaseArticles.createDataBase();
+            databaseArticles.openDataBase();
+            articles = databaseArticles.getAllArticles();
+            databaseArticles.close();
         } catch (IOException | SQLException e) {
             e.printStackTrace();
         }
 
-        View rootView = inflater.inflate(R.layout.fragment_grid, container, false);
-        getActivity().setTitle("Promos");
-        SubCategoriesRecyclerAdapter customAdapter = new SubCategoriesRecyclerAdapter(categories);
+        View rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
+        getActivity().setTitle("Accueil");
+        ArticlesRecyclerAdapter customAdapter = new ArticlesRecyclerAdapter(articles);
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);
         RecyclerView.LayoutManager layout = new GridLayoutManager(this.getContext(), 1);
         recyclerView.setLayoutManager(layout);
@@ -50,4 +52,5 @@ public class PromosCategoriesFragment extends Fragment {
         return rootView;
 
     }
+
 }

@@ -1,4 +1,4 @@
-package com.example.canor.android.fragment.category;
+package com.example.canor.android.fragment.categories;
 
 import android.app.Fragment;
 import android.os.Build;
@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.canor.android.R;
-import com.example.canor.android.adapter.ArticlesRecyclerAdapter;
+import com.example.canor.android.adapters.recyclers.ArticlesRecyclerAdapter;
 import com.example.canor.android.database.DatabaseSubCategories;
 import com.example.canor.android.model.Article;
-import com.example.canor.android.viewHolder.SubCategoriesViewHolder;
+import com.example.canor.android.viewHolders.SubCategoriesViewHolder;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -32,7 +32,7 @@ public class SubCategoryFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_grid, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
         String name = new SubCategoriesViewHolder(rootView).getName();
         DatabaseSubCategories databaseSubCategories = new DatabaseSubCategories(getContext());
         List<Article> articles = new ArrayList<>();
@@ -59,7 +59,7 @@ public class SubCategoryFragment extends Fragment {
                     articles = databaseSubCategories.getAllThrillersArticles();
                     break;
                 case "bd":
-                    articles = databaseSubCategories.getAllBooksArticles();
+                    articles = databaseSubCategories.getAllBDArticles();
                     break;
                 case "jeunesse":
                     articles = databaseSubCategories.getAllJeunesseArticles();

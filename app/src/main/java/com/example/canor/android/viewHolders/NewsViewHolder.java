@@ -1,4 +1,4 @@
-package com.example.canor.android.viewHolder;
+package com.example.canor.android.viewHolders;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.example.canor.android.R;
-import com.example.canor.android.fragment.category.SubCategoryFragment;
+import com.example.canor.android.fragment.categories.SubCategoryFragment;
+import com.example.canor.android.fragment.products.NewsFragment;
 import com.example.canor.android.model.Category;
 import com.squareup.picasso.Picasso;
 
@@ -15,12 +16,12 @@ import com.squareup.picasso.Picasso;
  * Created by Romain on 04/06/2017.
  */
 
-public class SubCategoriesViewHolder extends RecyclerView.ViewHolder {
+public class NewsViewHolder extends RecyclerView.ViewHolder {
 
     private static Context context;
     private static String name;
 
-    public SubCategoriesViewHolder(View itemView) {
+    public NewsViewHolder(View itemView) {
         super(itemView);
         context = itemView.getContext();
     }
@@ -36,7 +37,7 @@ public class SubCategoriesViewHolder extends RecyclerView.ViewHolder {
                 android.app.FragmentManager manager = ((Activity) context).getFragmentManager();
                 manager.beginTransaction()
                         .replace(R.id.content_frame
-                                , new SubCategoryFragment())
+                                , new NewsFragment())
                         .addToBackStack("")
                         .commit();
 

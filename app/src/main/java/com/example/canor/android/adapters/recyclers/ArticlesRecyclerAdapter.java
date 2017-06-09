@@ -1,4 +1,4 @@
-package com.example.canor.android.adapter;
+package com.example.canor.android.adapters.recyclers;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.example.canor.android.R;
 import com.example.canor.android.model.Article;
-import com.example.canor.android.viewHolder.ArticlesViewHolder;
+import com.example.canor.android.viewHolders.ArticlesViewHolder;
 
 import java.util.List;
 

@@ -101,4 +101,8 @@
     <string name="phone">0637528492</string>
     <string name="title_activity_notification_laucher">NotificationLaucherActivity</string>
     <string name="title_activity_show_product">ShowProductActivity</string>
+    <string name="nouveaute">NOUVEAUTE</string>
+    <string name="pr_f_rences">Préférences</string>
+    <string name="ev_nements">Evènements</string>
+    <string name="r_glages">Réglages</string>
 </resources>

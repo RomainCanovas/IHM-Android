@@ -22,7 +22,7 @@ import java.util.List;
 
 public class DatabaseArticles extends SQLiteOpenHelper {
 
-    private static String DB_NAME = "d.sqlite";
+    private static String DB_NAME = "f.sqlite";
 
     private SQLiteDatabase myDataBase;
     private final Context myContext;

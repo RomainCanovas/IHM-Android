@@ -1,14 +1,11 @@
 package com.example.canor.android;
 
 import android.app.FragmentManager;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,16 +13,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import com.example.canor.android.fragment.SettingsFragment;
-import com.example.canor.android.fragment.articles.general.HomeFragment;
-import com.example.canor.android.fragment.articles.general.NewsCategoriesFragment;
-import com.example.canor.android.fragment.articles.general.NotifFragment;
-import com.example.canor.android.fragment.articles.general.PromosCategoriesFragment;
-import com.example.canor.android.fragment.articles.general.WishlistFragment;
-import com.example.canor.android.fragment.category.CategoriesFragment;
+import com.example.canor.android.fragment.products.EventsFragment;
+import com.example.canor.android.fragment.settings.SettingsFragment;
+import com.example.canor.android.fragment.categories.CategoriesFragment;
+import com.example.canor.android.fragment.products.HomeFragment;
+import com.example.canor.android.fragment.categories.NewsCategoriesFragment;
+import com.example.canor.android.fragment.notifications.NotifFragment;
+import com.example.canor.android.fragment.categories.PromosCategoriesFragment;
+import com.example.canor.android.fragment.products.WishlistFragment;
 import com.example.canor.android.model.Article;
 import com.example.canor.android.model.Preferences;
 
@@ -69,7 +66,6 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        //TODO
         notifications = new ArrayList<>();
         notifications.add(new com.example.canor.android.model.Notification(new Article("", "Plates Coutures - Matmatah", "", "", "Nouveauté 2017!", "", "", "", "", "", "", ""), "name"));
         notifications.add(new com.example.canor.android.model.Notification(new Article("", "Evènement!", "", "", "Venez rencontrer Alexandre Astier jeudi midi!", "", "", "", "", "", "", ""), "name"));
@@ -153,6 +149,12 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame
                             , new WishlistFragment())
+                    .addToBackStack("")
+                    .commit();
+        } else if (id == R.id.nav_events) {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.content_frame
+                            , new EventsFragment())
                     .addToBackStack("")
                     .commit();
         } else if (id == R.id.nav_notif) {

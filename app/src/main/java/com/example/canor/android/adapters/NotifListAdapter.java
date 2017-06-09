@@ -1,4 +1,4 @@
-package com.example.canor.android.adapter;
+package com.example.canor.android.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

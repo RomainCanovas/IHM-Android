@@ -1,4 +1,4 @@
-package com.example.canor.android.fragment.articles.general;
+package com.example.canor.android.fragment.products;
 
 import android.app.Fragment;
 import android.os.Build;
@@ -11,10 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.canor.android.R;
-import com.example.canor.android.adapter.ArticlesRecyclerAdapter;
+import com.example.canor.android.adapters.recyclers.ArticlesRecyclerAdapter;
 import com.example.canor.android.database.DatabaseArticles;
 import com.example.canor.android.model.Article;
-import com.example.canor.android.viewHolder.CategoriesViewHolder;
+import com.example.canor.android.viewHolders.PromoViewHolder;
+import com.example.canor.android.viewHolders.SubCategoriesViewHolder;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -25,8 +26,8 @@ import java.util.List;
  * Created by Romain on 04/06/2017.
  */
 
-public class OtherFragment extends Fragment {
-    public OtherFragment() {
+public class PromosFragment extends Fragment {
+    public PromosFragment() {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -34,19 +35,26 @@ public class OtherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         DatabaseArticles databaseArticles = new DatabaseArticles(getContext());
         List<Article> articles = new ArrayList<>();
-        View rootView = inflater.inflate(R.layout.fragment_grid, container, false);
-        String name = new CategoriesViewHolder(rootView).getName();
+        View rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
+        String name = new PromoViewHolder(rootView).getName();
         try {
             databaseArticles.createDataBase();
             databaseArticles.openDataBase();
             switch (name) {
+                case "Musique":
+                    articles = databaseArticles.getPromoMusicArticle();
+                    break;
+                case "Livres":
+                    articles = databaseArticles.getPromoBooksArticle();
+                    break;
+                case "Enfants":
+                    articles = databaseArticles.getPromoChildArticle();
+                    break;
                 case "Développement":
-                    articles = databaseArticles.getAllDvpArticles();
-                    getActivity().setTitle("DEVELOPPEMENT PERS.");
+                    articles = databaseArticles.getPromoDvpArticle();
                     break;
                 case "Evenements":
-                    articles = databaseArticles.getAllEventArticles();
-                    getActivity().setTitle("EVENEMENTS");
+                    articles = databaseArticles.getPromoEventArticle();
                     break;
             }
             databaseArticles.close();
@@ -54,6 +62,7 @@ public class OtherFragment extends Fragment {
             e.printStackTrace();
         }
 
+        getActivity().setTitle(name.toUpperCase());
         ArticlesRecyclerAdapter customAdapter = new ArticlesRecyclerAdapter(articles);
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);
         RecyclerView.LayoutManager layout = new GridLayoutManager(this.getContext(), 1);

@@ -1,4 +1,4 @@
-package com.example.canor.android.viewHolder;
+package com.example.canor.android.viewHolders;
 
 import android.app.Activity;
 import android.content.Context;
@@ -55,6 +55,12 @@ public class ArticlesViewHolder extends RecyclerView.ViewHolder {//implements Vi
             TextView price = (TextView) this.itemView.findViewById(R.id.price);
             price.setText(article.getPrice());
             price.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
+        }
+        if (article.getNews().equals("1")){
+            this.itemView.findViewById(R.id.news).setVisibility(View.VISIBLE);
+        }
+        else{
+            this.itemView.findViewById(R.id.news).setVisibility(View.INVISIBLE);
         }
 
         ImageView img = (ImageView) this.itemView.findViewById(R.id.pic);

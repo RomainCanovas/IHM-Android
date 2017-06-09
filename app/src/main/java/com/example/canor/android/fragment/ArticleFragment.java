@@ -15,7 +15,7 @@ import com.example.canor.android.R;
 import com.example.canor.android.database.DatabaseArticles;
 import com.example.canor.android.listeners.CheckboxListener;
 import com.example.canor.android.model.Article;
-import com.example.canor.android.viewHolder.ArticlesViewHolder;
+import com.example.canor.android.viewHolders.ArticlesViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
