@@ -23,6 +23,9 @@ import com.squareup.picasso.Picasso;
 import java.io.IOException;
 import java.sql.SQLException;
 
+/**
+ * Created by canor on 28/05/2017.
+ */
 
 public class ArticleFragment extends Fragment {
     public ArticleFragment() {
@@ -33,7 +36,7 @@ public class ArticleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.article, container, false);
         DatabaseArticles databaseArticles = new DatabaseArticles(getContext());
-        Article article=new Article("","","","","","","","","","","","");
+        Article article = new Article("", "", "", "", "", "", "", "", "", "", "", "");
         try {
             databaseArticles.createDataBase();
             databaseArticles.openDataBase();
@@ -46,20 +49,19 @@ public class ArticleFragment extends Fragment {
         ImageView imageView = (ImageView) rootView.findViewById(R.id.imageButton);
         assert article != null;
         TextView name = (TextView) rootView.findViewById(R.id.title);
-        name.setPaintFlags(name.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
+        name.setPaintFlags(name.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         Typeface face = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Dosis-Bold.ttf");
         name.setTypeface(face);
         name.setText(article.getTitle());
         TextView category = (TextView) rootView.findViewById(R.id.category);
-        if(article.getSubCategory()!=null){
+        if (article.getSubCategory() != null) {
             category.setTypeface(face);
-            category.setText(article.getCategory().toUpperCase()+"/"+article.getSubCategory().toUpperCase());
-        }
-        else category.setText(article.getCategory().toUpperCase());
+            category.setText(article.getCategory().toUpperCase() + "/" + article.getSubCategory().toUpperCase());
+        } else category.setText(article.getCategory().toUpperCase());
         TextView author = (TextView) rootView.findViewById(R.id.author);
         author.setTypeface(face);
         author.setText(article.getAuthor());
-        if (article.getPromo().equals("1")){
+        if (article.getPromo().equals("1")) {
             rootView.findViewById(R.id.promo).setVisibility(View.VISIBLE);
             TextView promo = ((TextView) rootView.findViewById(R.id.promo));
             promo.setTypeface(face);
@@ -70,20 +72,18 @@ public class ArticleFragment extends Fragment {
             newPrice.setTextColor(getResources().getColor(R.color.colorPromo));
             oldPrice.setText(article.getPrice());
             oldPrice.getPaint().setStrikeThruText(true);
-        }
-        else {
+        } else {
             rootView.findViewById(R.id.promo).setVisibility(View.INVISIBLE);
             rootView.findViewById(R.id.price2).setVisibility(View.INVISIBLE);
             TextView price = (TextView) rootView.findViewById(R.id.price);
             price.setText(article.getPrice());
             price.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
         }
-        if (article.getNews().equals("1")){
+        if (article.getNews().equals("1")) {
             rootView.findViewById(R.id.news).setVisibility(View.VISIBLE);
             TextView news = ((TextView) rootView.findViewById(R.id.news));
             news.setTypeface(face);
-        }
-        else{
+        } else {
             rootView.findViewById(R.id.news).setVisibility(View.INVISIBLE);
         }
         TextView description = (TextView) rootView.findViewById(R.id.desc);
@@ -92,11 +92,10 @@ public class ArticleFragment extends Fragment {
         description.setText(article.getDescription());
         TextView stock = (TextView) rootView.findViewById(R.id.stock);
         description.setTypeface(face);
-        if(article.getStock().equals("0")){
+        if (article.getStock().equals("0")) {
             stock.setText(R.string.outOfstock);
-        }
-        else stock.setText(R.string.inStock);
-        CheckBox box= (CheckBox) rootView.findViewById(R.id.wishlist);
+        } else stock.setText(R.string.inStock);
+        CheckBox box = (CheckBox) rootView.findViewById(R.id.wishlist);
         box.setOnClickListener(new CheckboxListener(box, article));
         Picasso.with(getActivity()).load(article.getPic()).into(imageView);
         return rootView;

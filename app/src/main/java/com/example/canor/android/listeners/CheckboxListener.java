@@ -9,7 +9,7 @@ import com.example.canor.android.model.Article;
 import com.example.canor.android.model.Wishlist;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class CheckboxListener implements View.OnClickListener {
@@ -21,7 +21,7 @@ public class CheckboxListener implements View.OnClickListener {
     public CheckboxListener(CheckBox checkBox, Article article) {
         this.checkBox = checkBox;
         this.article = article;
-        context=checkBox.getContext();
+        context = checkBox.getContext();
     }
 
     @Override

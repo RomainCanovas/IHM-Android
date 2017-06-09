@@ -13,7 +13,7 @@ import com.example.canor.android.model.Category;
 import com.squareup.picasso.Picasso;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class PromoViewHolder extends RecyclerView.ViewHolder {
@@ -44,6 +44,7 @@ public class PromoViewHolder extends RecyclerView.ViewHolder {
             }
         });
     }
+
     public String getName() {
         return name;
     }

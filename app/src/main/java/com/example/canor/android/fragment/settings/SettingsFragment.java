@@ -14,7 +14,7 @@ import android.widget.Switch;
 import com.example.canor.android.R;
 
 /**
- * Created by canor on 08/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class SettingsFragment extends Fragment {
@@ -44,7 +44,7 @@ public class SettingsFragment extends Fragment {
         music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                namePref="Musique";
+                namePref = "Musique";
                 manager.beginTransaction()
                         .replace(R.id.content_frame
                                 , new SettingsCategoryFragment())
@@ -57,7 +57,7 @@ public class SettingsFragment extends Fragment {
         books.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                namePref="Livres";
+                namePref = "Livres";
                 manager.beginTransaction()
                         .replace(R.id.content_frame
                                 , new SettingsCategoryFragment())
@@ -70,7 +70,7 @@ public class SettingsFragment extends Fragment {
         children.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                namePref="Enfants";
+                namePref = "Enfants";
                 manager.beginTransaction()
                         .replace(R.id.content_frame
                                 , new SettingsCategoryFragment())
@@ -84,7 +84,7 @@ public class SettingsFragment extends Fragment {
         dvp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                namePref="Stages";
+                namePref = "Stages";
                 manager.beginTransaction()
                         .replace(R.id.content_frame
                                 , new SettingsCategoryFragment())
@@ -98,7 +98,7 @@ public class SettingsFragment extends Fragment {
         events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                namePref="Evenements";
+                namePref = "Evenements";
                 manager.beginTransaction()
                         .replace(R.id.content_frame
                                 , new SettingsCategoryFragment())
@@ -106,13 +106,6 @@ public class SettingsFragment extends Fragment {
                         .commit();
             }
         });
-
-
-
-
-
-
-
 
 
         notif = (Switch) rootView.findViewById(R.id.notifSwitch);

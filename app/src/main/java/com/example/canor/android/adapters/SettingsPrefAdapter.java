@@ -15,11 +15,14 @@ import com.example.canor.android.model.Category;
 
 import java.util.List;
 
+/**
+ * Created by canor on 28/05/2017.
+ */
 
-public class SettingsPrefAdapter extends ArrayAdapter<Category>{
+public class SettingsPrefAdapter extends ArrayAdapter<Category> {
 
     private Switch pref;
-    public static boolean isPref=true;
+    public static boolean isPref = true;
 
     public SettingsPrefAdapter(@NonNull Context context, List<Category> list) {
         super(context, 0, list);
@@ -29,7 +32,7 @@ public class SettingsPrefAdapter extends ArrayAdapter<Category>{
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if (convertView == null){
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.pref, null);
         }
         Category category = getItem(position);
@@ -51,7 +54,7 @@ public class SettingsPrefAdapter extends ArrayAdapter<Category>{
         return convertView;
     }
 
-    public static boolean getIsPref(){
+    public static boolean getIsPref() {
         return isPref;
     }
 

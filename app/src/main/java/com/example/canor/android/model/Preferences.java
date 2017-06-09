@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by canor on 08/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class Preferences {
 
-    public Preferences(){
+    public Preferences() {
 
     }
-    static List<String> preferences=new ArrayList<>();
+
+    static List<String> preferences = new ArrayList<>();
 
 
-    public static void createPrefInit(){
+    public static void createPrefInit() {
         preferences.add("1");
         preferences.add("1");
         preferences.add("1");
@@ -36,8 +37,8 @@ public class Preferences {
         preferences.add("1");
     }
 
-    public static void uptadePref(int nb, String value){
-        preferences.set(nb,value);
+    public static void uptadePref(int nb, String value) {
+        preferences.set(nb, value);
     }
 
 }

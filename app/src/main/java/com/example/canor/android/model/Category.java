@@ -1,7 +1,7 @@
 package com.example.canor.android.model;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class Category {

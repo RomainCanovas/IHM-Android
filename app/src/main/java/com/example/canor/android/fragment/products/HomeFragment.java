@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class HomeFragment extends Fragment {
@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
         }
 
-        if (SettingsPrefAdapter.getIsPref()==false){
+        if (SettingsPrefAdapter.getIsPref() == false) {
             articles.remove(3);
             articles.remove(3);
         }

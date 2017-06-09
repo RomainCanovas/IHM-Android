@@ -17,7 +17,7 @@ import com.example.canor.android.model.Article;
 import com.squareup.picasso.Picasso;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class ArticlesViewHolder extends RecyclerView.ViewHolder {//implements View.OnClickListener{
@@ -51,7 +51,7 @@ public class ArticlesViewHolder extends RecyclerView.ViewHolder {//implements Vi
             ((TextView) this.itemView.findViewById(R.id.stock)).setText("En stock");
             ((TextView) this.itemView.findViewById(R.id.desc)).setText(article.getDescription());
         }
-        if (article.getPromo().equals("1")){
+        if (article.getPromo().equals("1")) {
             this.itemView.findViewById(R.id.promo).setVisibility(View.VISIBLE);
             this.itemView.findViewById(R.id.price2).setVisibility(View.VISIBLE);
             TextView newPrice = ((TextView) this.itemView.findViewById(R.id.price));
@@ -60,18 +60,16 @@ public class ArticlesViewHolder extends RecyclerView.ViewHolder {//implements Vi
             newPrice.setTextColor(context.getResources().getColor(R.color.colorPromo));
             oldPrice.setText(article.getPrice());
             oldPrice.getPaint().setStrikeThruText(true);
-        }
-        else {
+        } else {
             this.itemView.findViewById(R.id.promo).setVisibility(View.INVISIBLE);
             this.itemView.findViewById(R.id.price2).setVisibility(View.INVISIBLE);
             TextView price = (TextView) this.itemView.findViewById(R.id.price);
             price.setText(article.getPrice());
             price.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
         }
-        if (article.getNews().equals("1")){
+        if (article.getNews().equals("1")) {
             this.itemView.findViewById(R.id.news).setVisibility(View.VISIBLE);
-        }
-        else{
+        } else {
             this.itemView.findViewById(R.id.news).setVisibility(View.INVISIBLE);
         }
 

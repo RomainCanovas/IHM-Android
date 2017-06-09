@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class DatabaseArticles extends SQLiteOpenHelper {
@@ -225,7 +225,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public Article getArticle(String id) {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE id==\""+id+"\"", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE id==\"" + id + "\"", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -322,6 +322,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
         cursor.close();
         return articles;
     }
+
     public List<Article> getNewEventArticle() {
         List<Article> articles = new ArrayList<>();
         Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"event\" AND new==1", null);
@@ -446,6 +447,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
         cursor.close();
         return articles;
     }
+
     public List<Article> getPromoEventArticle() {
         List<Article> articles = new ArrayList<>();
         Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"event\" AND promo==1", null);

@@ -13,7 +13,7 @@ import com.example.canor.android.adapters.NotifListAdapter;
 import com.example.canor.android.model.Notification;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class NotifFragment extends Fragment {
@@ -24,7 +24,7 @@ public class NotifFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.notif_list, container, false);
         getActivity().setTitle("Historique de notifications");
-        NotifListAdapter customAdapter = new NotifListAdapter(getActivity(),Notification.getNotif());
+        NotifListAdapter customAdapter = new NotifListAdapter(getActivity(), Notification.getNotif());
         ListView listView = (ListView) rootView.findViewById(R.id.listNotif);
         listView.setAdapter(customAdapter);
         return rootView;

@@ -13,7 +13,7 @@ import com.example.canor.android.viewHolders.SubCategoriesViewHolder;
 import java.util.List;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class PromoRecyclerAdapter extends RecyclerView.Adapter<PromoViewHolder> {

@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Romain on 04/06/2017.
+ * Created by canor on 28/05/2017.
  */
 
 public class MainActivity extends AppCompatActivity
@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity
                 .replace(R.id.content_frame
                         , new HomeFragment())
                 .commit();
-
 
 
         notifications = new ArrayList<>();
@@ -101,12 +100,11 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_notif) {
-            if(SettingsFragment.getIsNotif()==true) {
+            if (SettingsFragment.getIsNotif() == true) {
                 createNotification(notifications);
                 com.example.canor.android.model.Notification.updateNotif(notifications);
-            }
-            else{
-                Toast.makeText(getBaseContext(),"Activez les notifications!",
+            } else {
+                Toast.makeText(getBaseContext(), "Activez les notifications!",
                         Toast.LENGTH_SHORT).show();
             }
         }
@@ -183,7 +181,7 @@ public class MainActivity extends AppCompatActivity
 
     private final void createNotification(List<com.example.canor.android.model.Notification> notifications) {
         int i = 0;
-        if(SettingsPrefAdapter.getIsPref()==false){
+        if (SettingsPrefAdapter.getIsPref() == false) {
             notifications.remove(0);
         }
         for (com.example.canor.android.model.Notification n : notifications) {
