@@ -250,7 +250,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getNewMusicArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"musique\" AND WHERE new==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"musique\" AND new==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -275,7 +275,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getNewBooksArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"livres\" AND WHERE new==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"livres\" AND new==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -300,7 +300,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getNewDvpArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"dvp\" AND WHERE new==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"dvp\" AND new==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -324,7 +324,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
     }
     public List<Article> getNewEventArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"event\" AND WHERE new==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"event\" AND new==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -349,7 +349,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getNewChildArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"enfants\" AND WHERE new==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"enfants\" AND new==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -374,7 +374,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getPromoMusicArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"musique\" AND WHERE promo==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"musique\" AND promo==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -399,7 +399,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getPromoBooksArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"livres\" AND WHERE promo==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"livres\" AND promo==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -424,7 +424,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getPromoDvpArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"dvp\" AND WHERE promo==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"dvp\" AND promo==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -448,7 +448,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
     }
     public List<Article> getPromoEventArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"event\" AND WHERE promo==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"event\" AND promo==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
@@ -473,7 +473,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getPromoChildArticle() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"enfants\" AND WHERE promo==1", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles WHERE category==\"enfants\" AND promo==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(

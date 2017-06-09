@@ -41,19 +41,19 @@ public class PromosFragment extends Fragment {
             databaseArticles.createDataBase();
             databaseArticles.openDataBase();
             switch (name) {
-                case "Musique":
+                case "musique":
                     articles = databaseArticles.getPromoMusicArticle();
                     break;
-                case "Livres":
+                case "livres":
                     articles = databaseArticles.getPromoBooksArticle();
                     break;
-                case "Enfants":
+                case "enfants":
                     articles = databaseArticles.getPromoChildArticle();
                     break;
-                case "Développement":
+                case "dvp":
                     articles = databaseArticles.getPromoDvpArticle();
                     break;
-                case "Evenements":
+                case "event":
                     articles = databaseArticles.getPromoEventArticle();
                     break;
             }

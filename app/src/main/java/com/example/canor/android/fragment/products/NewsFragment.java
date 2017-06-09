@@ -41,19 +41,19 @@ public class NewsFragment extends Fragment {
             databaseArticles.createDataBase();
             databaseArticles.openDataBase();
             switch (name) {
-                case "Musique":
+                case "musique":
                     articles = databaseArticles.getNewMusicArticle();
                     break;
-                case "Livres":
+                case "livres":
                     articles = databaseArticles.getNewBooksArticle();
                     break;
-                case "Enfants":
+                case "enfants":
                     articles = databaseArticles.getNewChildArticle();
                     break;
-                case "Développement":
+                case "dvp":
                     articles = databaseArticles.getNewDvpArticle();
                     break;
-                case "Evenements":
+                case "event":
                     articles = databaseArticles.getNewEventArticle();
                     break;
             }
