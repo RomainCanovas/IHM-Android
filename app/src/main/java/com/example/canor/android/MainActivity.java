@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity
 
         notifications = new ArrayList<>();
         notifications.add(new com.example.canor.android.model.Notification(new Article("", "Plates Coutures - Matmatah", "", "", "Nouveauté 2017!", "", "", "", "", "", "", ""), "name"));
-        notifications.add(new com.example.canor.android.model.Notification(new Article("", "Evènement!", "", "", "Venez rencontrer Alexandre Astier jeudi midi!", "", "", "", "", "", "", ""), "name"));
+        notifications.add(new com.example.canor.android.model.Notification(new Article("", "Evènement!", "", "", "Rencontrez Alexandre Astier!", "", "", "", "", "", "", ""), "name"));
         notifications.add(new com.example.canor.android.model.Notification(new Article("", "Puissance 4", "", "", "Promo sur le jeu incontournable!", "", "", "", "", "", "", ""), "name"));
     }
 

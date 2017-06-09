@@ -44,8 +44,8 @@ public class HomeFragment extends Fragment {
         }
 
         if (SettingsPrefAdapter.getIsPref()==false){
-            articles.remove(4);
-            articles.remove(4);
+            articles.remove(3);
+            articles.remove(3);
         }
         View rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
         getActivity().setTitle("Accueil");

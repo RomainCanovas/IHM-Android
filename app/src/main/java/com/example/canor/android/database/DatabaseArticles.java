@@ -98,7 +98,7 @@ public class DatabaseArticles extends SQLiteOpenHelper {
 
     public List<Article> getAllArticles() {
         List<Article> articles = new ArrayList<>();
-        Cursor cursor = myDataBase.rawQuery("SELECT * FROM articles", null);
+        Cursor cursor = myDataBase.rawQuery("SELECT DISTINCT * FROM articles WHERE new==1 OR promo==1", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
             articles.add(new Article(
