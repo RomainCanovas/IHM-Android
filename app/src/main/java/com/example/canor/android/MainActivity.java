@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.canor.android.adapters.SettingsPrefAdapter;
 import com.example.canor.android.fragment.products.EventsFragment;
 import com.example.canor.android.fragment.settings.SettingsFragment;
 import com.example.canor.android.fragment.categories.CategoriesFragment;
@@ -182,6 +183,9 @@ public class MainActivity extends AppCompatActivity
 
     private final void createNotification(List<com.example.canor.android.model.Notification> notifications) {
         int i = 0;
+        if(SettingsPrefAdapter.getIsPref()==false){
+            notifications.remove(0);
+        }
         for (com.example.canor.android.model.Notification n : notifications) {
             NotificationManager mNotification = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             Intent mainActivity = new Intent(this, MainActivity.class);

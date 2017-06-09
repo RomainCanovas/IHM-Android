@@ -35,6 +35,7 @@ public class SettingsPrefAdapter extends ArrayAdapter<Category>{
         Category category = getItem(position);
         pref = (Switch) convertView.findViewById(R.id.subCat);
         pref.setText(category.getName());
+        pref.setChecked(true);
         pref.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -48,6 +49,10 @@ public class SettingsPrefAdapter extends ArrayAdapter<Category>{
 
 
         return convertView;
+    }
+
+    public static boolean getIsPref(){
+        return isPref;
     }
 
 }

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.canor.android.R;
+import com.example.canor.android.adapters.SettingsPrefAdapter;
 import com.example.canor.android.adapters.recyclers.ArticlesRecyclerAdapter;
 import com.example.canor.android.database.DatabaseArticles;
 import com.example.canor.android.model.Article;
@@ -42,6 +43,10 @@ public class HomeFragment extends Fragment {
             e.printStackTrace();
         }
 
+        if (SettingsPrefAdapter.getIsPref()==false){
+            articles.remove(4);
+            articles.remove(4);
+        }
         View rootView = inflater.inflate(R.layout.fragment_recycler, container, false);
         getActivity().setTitle("Accueil");
         ArticlesRecyclerAdapter customAdapter = new ArticlesRecyclerAdapter(articles);
